@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+  font-size: 15px;
+  transition: font-size 5s 2s ease-out;
+}
+
+#box:hover {
+  font-size: 50px;
+}
+
+@keyframes move {
+  from {
+    top: 0;
+    left: 0;
+  }
+
+  25% {
+    top: 0;
+    left: calc(100% - 20px);
+  }
+
+  50% {
+    top: calc(100% - 20px);
+    left: calc(100% - 20px);
+  }
+
+  75% {
+    top: calc(100% - 20px);
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+#ball-container {
+  width: 100px;
+  height: 100px;
+  border: 2px black solid;
+  position: relative;
+}
+
+#ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: 8s linear 2s 2 move;
+  /*
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: 2;
+  animation-name: move;
+  */
+}
+
+@keyframes sprite {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -1400px;
+  }
+}
+
+#sprite-animation {
+  width: 175px;
+  height: 309px;
+  background: url(https://miro.medium.com/max/1400/1*GJ6ZL0eX8tJE54ZYFSnI9Q.png)
+    no-repeat;
+  animation: 2s infinite steps(8) sprite;
+}
